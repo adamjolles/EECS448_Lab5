@@ -1,5 +1,5 @@
 * {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
+body {font-family: Arial, sans-serif; margin:0}
 .mySlides {display: none}
 img {vertical-align: middle;}
 
@@ -14,16 +14,24 @@ img {vertical-align: middle;}
   position: absolute;
   top: 110%;
   width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: black;
+  padding: 18px;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  margin-top: -22px;
+  color: black;
 }
 
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.active, .place:hover {
+  background-color: #717171;
+}
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
@@ -31,24 +39,4 @@ img {vertical-align: middle;}
 
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
-}
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
 }

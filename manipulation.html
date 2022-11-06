@@ -2,58 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exercise4</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
 
     <script>
-        const change = () => {
-            var txt = document.querySelector("#txt");
+        const changeCSS = () => {
+            var text = document.querySelector("#text");
             const border = {
-                r: parseInt(document.querySelector("#borderR").value),
-                g: parseInt(document.querySelector("#borderG").value),
-                b: parseInt(document.querySelector("#borderB").value),
-                w: parseInt(document.querySelector("#borderW").value)
+                r: parseInt(document.querySelector("#borderRed").value),
+                g: parseInt(document.querySelector("#borderGreen").value),
+                b: parseInt(document.querySelector("#borderBlue").value),
+                w: parseInt(document.querySelector("#borderWidth").value)
             };
             const bg = {
-                r: parseInt(document.querySelector("#bgR").value),
-                g: parseInt(document.querySelector("#bgG").value),
-                b: parseInt(document.querySelector("#bgB").value)
+                r: parseInt(document.querySelector("#backgroundRed").value),
+                g: parseInt(document.querySelector("#backgroundGreen").value),
+                b: parseInt(document.querySelector("#backgroundBlue").value)
             };
-            if(border.r >= 0 && border.r <= 255 && border.g >= 0 && border.g <= 255 && border.b >= 0 && border.b <= 255 && border.w >= 0 && bg.r >= 0 && bg.r <= 255 && bg.g >= 0 && bg.g <= 255 && bg.b >= 0 && bg.b <= 255) {
-                txt.style.border = `rgb(${border.r}, ${border.g}, ${border.b}) solid ${border.w}px`;
-                txt.style.backgroundColor = `rgb(${bg.r}, ${bg.g}, ${bg.b})`;
-            } else {
-                alert("Please enter valid values.");
+            if(border.r >= 0 && border.r <= 255 && border.g >= 0 && border.g <= 255 && border.b >= 0 && border.b <= 255 && border.w >= 0 && bg.r >= 0 && bg.r <= 255 && bg.g >= 0 && bg.g <= 255 && bg.b >= 0 && bg.b <= 255) 
+            {
+                text.style.border = `rgb(${border.r}, ${border.g}, ${border.b}) solid ${border.w}px`;
+                text.style.backgroundColor = `rgb(${bg.r}, ${bg.g}, ${bg.b})`;
+            } 
+            else 
+            {
+                alert("The values you have entered are not valid.");
             }
         }
     </script>
 
     <br><br>
-    <center><div id="txt"> dummy text </div></center>
+    <center><div id="text"> dummy text </div></center>
     <div>
-        <h3>Border:</h3>
-        <p>R (0-255)</p>
-        <input id="borderR" type="number" min="0" max="255">
-        <p>G (0-255)</p>
-        <input id="borderG" type="number" min="0" max="255">
-        <p>B (0-255)</p>
-        <input id="borderB" type="number" min="0" max="255">
+        <h2>Border:</h2>
+        <p>Red Value (0-255)</p>
+        <input id="borderRed" type="number" min="0" max="255">
+        <p>Green Value (0-255)</p>
+        <input id="borderGreen" type="number" min="0" max="255">
+        <p>Blue Value (0-255)</p>
+        <input id="borderBlue" type="number" min="0" max="255">
         <p>Width</p>
-        <input id="borderW" type="number" min="0">
+        <input id="borderWidth" type="number" min="0">
     </div>
+    <br>
     <div>
-        <h3>Background Color:</h3>
-        <p>R (0-255)</p>
-        <input id="bgR" type="text" type="number" min="0" max="255">
-        <p>G (0-255)</p>
-        <input id="bgG" type="text" type="number" min="0" max="255">
-        <p>B (0-255)</p>
-        <input id="bgB" type="text" type="number" min="0" max="255">
+        <h2>Background Color:</h2>
+        <p>Red Value (0-255)</p>
+        <input id="backgroundRed" type="text" type="number" min="0" max="255">
+        <p>Green Value (0-255)</p>
+        <input id="backgroundGreen" type="text" type="number" min="0" max="255">
+        <p>Blue Value (0-255)</p>
+        <input id="backgroundBlue" type="text" type="number" min="0" max="255">
     </div>
-    <button onclick="change()">Change CSS</button>
+    <button onclick="changeCSS()">Manipulate CSS</button>
     
 </body>
 </html>
